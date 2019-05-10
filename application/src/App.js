@@ -4,8 +4,16 @@ import './App.css';
 import SignIn from './SignIn/index';
 import SignUp from './SignUp/index';
 import Users from './Jokes';
+import image from './HnEDRAB.jpg'
+
+const style ={
+  color: 'white',
+  textDecoration: 'none',
+  opacity: '.6'
+}
 
 const button = {
+  background:'transparent',
   borderRadius: "15px",
   border: 'none',
   padding: '10px',
@@ -13,10 +21,26 @@ const button = {
   width: '100px'
 }
 
+const imageStlye ={
+  height: '500px',
+  widht : '500px'
+}
+
+const header={
+  height: '60px',
+  color: 'white',
+  background: '#5F9217',
+  display: 'flex',
+  justifyContent: 'space-around',
+  alignItems: 'center'
+}
+
 const Home = props => {
   return (
     <div>
-      <h3>Welcome Home</h3>
+      <h2>Dad Jokes</h2>
+      <h4>Are you Ready for some Laughs?</h4>
+      <img style={imageStlye} src={image} alt="guy telling dad joke"/>
     </div>
   )
 }
@@ -37,12 +61,32 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-            <NavLink to='/' exact> Home</NavLink>&nbsp;&nbsp;&nbsp;
-            <NavLink to='/SignUp'>Sign Up</NavLink>&nbsp;&nbsp;&nbsp;
-            <NavLink to='/SignIn'>Sign In</NavLink>&nbsp;&nbsp;&nbsp;
-            <NavLink to='/Jokes'>Jokes</NavLink>&nbsp;&nbsp;
-            <button style={button} onClick={this.logout} onSubmit={this.SubmitHandler}>Sign Out</button>
+        <header style={header} >
+            <NavLink style={style}
+             activeStyle={{
+             textDecoration: "underline",
+             color: "white",
+             opacity: "1" }} 
+             to='/' exact> Home</NavLink>&nbsp;&nbsp;&nbsp;
+            <NavLink style={style}
+            activeStyle={{
+            textDecoration: "underline",
+            color: "white",
+            opacity: "1" }} 
+            to='/SignUp'>Sign Up</NavLink>&nbsp;&nbsp;&nbsp;
+            <NavLink style={style}
+            activeStyle={{
+            textDecoration: "underline",
+            color: "white",
+            opacity: "1" }} 
+            to='/SignIn'>Sign In</NavLink>&nbsp;&nbsp;&nbsp;
+            <NavLink style={style}
+            activeStyle={{
+            textDecoration: "underline",
+            color: "white",
+            opacity: "1"}} 
+            to='/Jokes'>Jokes</NavLink>&nbsp;&nbsp;
+            <button style={button} onClick={this.logout} onSubmit={this.SubmitHandler}><i class="fas fa-door-open"></i></button>
           </header>
         
         <div>

@@ -1,6 +1,31 @@
 import React from 'react';
 import axios from 'axios';
 
+const form ={
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems:'center',
+    textAlign: 'center'
+  }
+  
+  const input={
+    border: 'none',
+    borderBottom: '2px solid black',
+    width: '200px',
+    margin: '20px'
+  }
+
+  const button ={
+    width: '200px',
+    padding: '10px',
+    color: '#black',
+    borderRadius: '15px',
+    border: '1px solid black',
+    background: 'white',
+    margin: '20px 0',
+    boxShadow: '0px 8px 15px black'
+  }
+
 class SignUp extends React.Component {
     state = {
         username: '',
@@ -30,17 +55,17 @@ class SignUp extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.SubmitHandler}>
+            <form style={form} onSubmit={this.SubmitHandler}>
                 <div>
                     <label htmlFor="username">Username: &nbsp;</label>
-                    <input name="username" value={this.state.username} onChange={this.InputHandler} type='text' />
+                    <input style={input} name="username" value={this.state.username} onChange={this.InputHandler} type='text' />
                 </div>
                 <div>
                     <label htmlFor="password">Password: &nbsp;</label>
-                    <input name="password" value={this.state.password} onChange={this.InputHandler} type='password' />
+                    <input style={input} name="password" value={this.state.password} onChange={this.InputHandler} type='password' />
                 </div>
                 <div>
-                    <button type='submit'>Register</button>
+                    <button style={button} type='submit'>Register</button>
                 </div>
             </form>
         )

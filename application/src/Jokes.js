@@ -1,5 +1,12 @@
 import React from 'react';
 import axios from 'axios';
+import './App.css';
+
+const mainDiv = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+}
 
 class Jokes extends React.Component {
     state = {
@@ -27,14 +34,14 @@ class Jokes extends React.Component {
     render() {
         if (localStorage.getItem ('jwt')){
         return (
-            <div>
+            <div style={mainDiv}>
                
                 <h2> Let's Have Some Laughs! </h2>
                 <h3>So, Have you heard this one? </h3>
                 
                     {this.state.jokes.map(jokes => 
                         
-                        ( <p key = {jokes.id}> {jokes.joke}</p>)
+                        ( <p className={'card-1'} key = {jokes.id}> <i class="far fa-laugh-squint"></i>  {jokes.joke}</p> )
                          
                     )}
             </div>
